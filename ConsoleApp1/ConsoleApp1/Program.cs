@@ -20,38 +20,48 @@ namespace ConsoleApp1
             Futbolista futbolista3 = new Futbolista(6, "Unai", "Núñez", 25, 13, "PORTERO");
             Futbolista futbolista4 = new Futbolista(7, "Iñigo", "Martínez", 26, 14, "CENTRO CAMPISTA");
 
-            //List<SeleccionFutbol> selecion = new List<SeleccionFutbol>();
-            //{
+            List<SeleccionFutbol> selecion = new List<SeleccionFutbol>()
+            {
+                entrenador1, masajista1, masajista2, futbolista1, futbolista2, futbolista3, futbolista4
+            };
 
-            //};
+            foreach (SeleccionFutbol person in selecion)
+            {
+                Console.WriteLine(person.GetType().Name.ToUpper());
+                Console.WriteLine(person.ToString());
+                Console.WriteLine("**************************");
+            }
+
             List<Entrenador> entrenadores = new List<Entrenador>()
             {
                 entrenador1
             };
+
             List<Futbolista> futbolistas = new List<Futbolista>()
             {
                 futbolista1, futbolista2, futbolista3, futbolista4
             };
+
             List<Masajista> masajistas = new List<Masajista>()
             {
                 masajista1, masajista2
             };
 
             // to show all of them
-            foreach (Entrenador entrenador in entrenadores)
-            {
-                Console.WriteLine(entrenador.MostrarDatos());
-            }
+            //foreach (Entrenador entrenador in entrenadores)
+            //{
+            //    Console.WriteLine(entrenador.MostrarDatos());
+            //}
 
-            foreach (Masajista masajista in masajistas)
-            {
-                Console.WriteLine(masajista.MostrarDatos());
-            }
+            //foreach (Masajista masajista in masajistas)
+            //{
+            //    Console.WriteLine(masajista.MostrarDatos());
+            //}
 
-            foreach (Futbolista futbolista in futbolistas)
-            {
-                Console.WriteLine(futbolista.MostrarDatos());
-            }
+            //foreach (Futbolista futbolista in futbolistas)
+            //{
+            //    Console.WriteLine(futbolista.MostrarDatos());
+            //}
             Console.ReadLine();
 
         }

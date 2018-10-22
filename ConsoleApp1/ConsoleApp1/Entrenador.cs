@@ -40,15 +40,20 @@ namespace ConsoleApp1
 
         }
 
-        public string MostrarDatos()
-        {
-            string result = "";
+        //public string MostrarDatos()
+        //{
+        //    string result = "";
 
-            if (this.GetIdFederacion() != "")
-            {
-                result += "ID FEDERACION " + this.GetIdFederacion() + " ";
-            }
-            return "ENTRENADOR " + base.MostrarDatos() + result;
+        //    if (this.GetIdFederacion() != "")
+        //    {
+        //        result += "ID FEDERACION " + this.GetIdFederacion() + " ";
+        //    }
+        //    return "ENTRENADOR " + base.MostrarDatos() + result;
+        //}
+
+        public override string ToString()
+        {
+            return base.ToString() + "\nID Federation: " + idFederacion;
         }
     }
 }

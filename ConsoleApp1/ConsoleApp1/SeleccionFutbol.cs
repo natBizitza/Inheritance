@@ -13,6 +13,9 @@ namespace ConsoleApp1
         private string apellidos;
         private int edad;
         private static int count = 0;
+        private string viajar = "";
+        //to see all available methods for objects
+        private Object a;
 
         //constructor
         public SeleccionFutbol(int id, string nombre, string apellidos, int edad)
@@ -71,33 +74,67 @@ namespace ConsoleApp1
 
         }
 
-        public void Viajar()
+        public void SetViajar()
         {
-
+            
         }
 
-        public string MostrarDatos()
+        //public string MostrarDatos()
+        //{
+        //    string result = "";
+
+        //    if (this.GetId() > 0)
+        //    {
+        //       result += "ID " + this.GetId() + " ";
+        //       count++;
+            
+        //    }
+        //    if (this.GetNombre() !="")
+        //    {
+        //        result += "NOMBRE " + this.GetNombre() + " ";
+        //    }
+        //    if (this.GetApellidos() != "")
+        //    {
+        //        result += "APELLIDOS " + this.GetApellidos() + " ";
+        //    }
+        //    if (this.GetEdad() > 0)
+        //    {
+        //        result += "EDAD " + this.GetEdad() + " ";
+        //    }
+        //    //Console.WriteLine(count);
+        //    return result;     
+        //}
+
+        //it works wwith 'virtual'
+        //public virtual string MostrarDatos()
+        //{
+        //    string result = "";
+
+        //    if (this.GetId() > 0)
+        //    {
+        //        result += "ID " + this.GetId() + " ";
+        //        count++;
+
+        //    }
+        //    if (this.GetNombre() != "")
+        //    {
+        //        result += "NOMBRE " + this.GetNombre() + " ";
+        //    }
+        //    if (this.GetApellidos() != "")
+        //    {
+        //        result += "APELLIDOS " + this.GetApellidos() + " ";
+        //    }
+        //    if (this.GetEdad() > 0)
+        //    {
+        //        result += "EDAD " + this.GetEdad() + " ";
+        //    }
+        //    //Console.WriteLine(count);
+        //    return result;
+        //}
+
+        public override string ToString()
         {
-            string result = "";
-
-            if (this.GetId() > 0)
-            {
-               result += "ID " + this.GetId() + " ";
-            }
-            if (this.GetNombre() !="")
-            {
-                result += "NOMBRE " + this.GetNombre() + " ";
-            }
-            if (this.GetApellidos() != "")
-            {
-                result += "APELLIDOS " + this.GetApellidos() + " ";
-            }
-            if (this.GetEdad() > 0)
-            {
-                result += "EDAD " + this.GetEdad() + " ";
-            }
-
-            return result;
+            return "ID: " + id + "\nName: " + nombre + "\nApellido: " + apellidos + "\nAge: " + edad;
         }
 
         public void contador()

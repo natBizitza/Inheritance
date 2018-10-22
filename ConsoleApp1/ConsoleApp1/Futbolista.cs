@@ -42,7 +42,7 @@ namespace ConsoleApp1
         //methods
         public void JugarPartido()
         {
-
+            
         }
 
         public void Entrenar()
@@ -50,19 +50,38 @@ namespace ConsoleApp1
 
         }
 
-        public string MostrarDatos()
-        {
-            string result = "";
+        //public string MostrarDatos()
+        //{
+        //    string result = "";
 
-            if (this.GetDorsal() > 0)
-            {
-                result += "DORSAL " + this.GetDorsal() + " ";
-            }
-            if (this.GetDemarcacion()!= "")
-            {
-                result += "DEMARCACION " + this.GetDemarcacion() + " ";
-            }
-            return "FUTBOLISTA " + base.MostrarDatos() + result;
+        //    if (this.GetDorsal() > 0)
+        //    {
+        //        result += "DORSAL " + this.GetDorsal() + " ";
+        //    }
+        //    if (this.GetDemarcacion()!= "")
+        //    {
+        //        result += "DEMARCACION " + this.GetDemarcacion() + " ";
+        //    }
+        //    return "FUTBOLISTA " + base.MostrarDatos() + result;
+        //}
+
+        //public override string MostrarDatos()
+        //{
+        //    string result = "";
+
+        //    if (this.GetDorsal() > 0)
+        //    {
+        //        result += "DORSAL " + this.GetDorsal() + " ";
+        //    }
+        //    if (this.GetDemarcacion() != "")
+        //    {
+        //        result += "DEMARCACION " + this.GetDemarcacion() + " ";
+        //    }
+        //    return "FUTBOLISTA " + base.MostrarDatos() + result;
+        //}
+        public override string ToString()
+        {
+            return base.ToString() + "\nDorsal: " + dorsal + "\nDemarcation: " + demarcacion;
         }
     }
 }

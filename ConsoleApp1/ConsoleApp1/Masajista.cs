@@ -46,19 +46,24 @@ namespace ConsoleApp1
 
         }
 
-        public string MostrarDatos()
-        {
-            string result = "";
+        //public string MostrarDatos()
+        //{
+        //    string result = "";
 
-            if (this.GetTitulacion() != "")
-            {
-                result += "TITULACION " + this.GetTitulacion() + " ";
-            }
-            if (this.GetYearsOfExperience() != 0)
-            {
-                result += "YEARS OF EXPERIENCE " + this.GetYearsOfExperience() + " ";
-            }
-            return "MASAJISTA " + base.MostrarDatos() + result;
+        //    if (this.GetTitulacion() != "")
+        //    {
+        //        result += "TITULACION " + this.GetTitulacion() + " ";
+        //    }
+        //    if (this.GetYearsOfExperience() != 0)
+        //    {
+        //        result += "YEARS OF EXPERIENCE " + this.GetYearsOfExperience() + " ";
+        //    }
+        //    return "MASAJISTA " + base.MostrarDatos() + result;
+        //}
+
+        public override string ToString()
+        {
+            return base.ToString() + "\nTitel: " + titulacion + "\nYears of experience:" + yearsOfExperience;
         }
     }
 }
