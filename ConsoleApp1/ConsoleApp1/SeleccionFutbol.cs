@@ -71,21 +71,25 @@ namespace ConsoleApp1
         //methods
         public void Training()
         {
+            Console.WriteLine("Training");
             this.training = true;
         }
 
         public void TrainingDone()
         {
+            Console.WriteLine("Not Training");
             this.training = false;
         }
 
         public void Travel()
         {
+            Console.WriteLine("Travelling");
             this.travelling = true;
         }
 
         public void ReturnFromTravel()
         {
+            Console.WriteLine("No travelling");
             this.travelling = false;
         }
 
@@ -148,6 +152,7 @@ namespace ConsoleApp1
         //    return result;
         //}
 
+            //to show all the data using ovveride for ToString();
         public override string ToString()
         {
             return "ID: " + id + "\nName: " + nombre + "\nApellido: " + apellidos + "\nAge: " + edad;

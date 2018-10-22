@@ -10,6 +10,7 @@ namespace ConsoleApp1
     {
         private string titulacion;
         private int yearsOfExperience;
+        private bool massage;
 
         //constructor
         public Masajista(int id, string nombre, string apellidos, int edad, string titulacion, int yearsOfExperience) : base(id, nombre, apellidos, edad)
@@ -41,9 +42,16 @@ namespace ConsoleApp1
         }
 
         //methods
-        public void DarMasaje()
+        public void GiveMassage()
         {
+            Console.WriteLine("Masseur is giving massage");
+            this.massage = true;
+        }
 
+        public void EndMassage()
+        {
+            Console.WriteLine("Masseur is not giving massage");
+            this.massage = false;
         }
 
         //public string MostrarDatos()

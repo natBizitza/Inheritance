@@ -20,6 +20,7 @@ namespace ConsoleApp1
             Futbolista futbolista3 = new Futbolista(6, "Unai", "Núñez", 25, 13, "PORTERO");
             Futbolista futbolista4 = new Futbolista(7, "Iñigo", "Martínez", 26, 14, "CENTRO CAMPISTA");
 
+            //the list with all the team
             List<SeleccionFutbol> selecion = new List<SeleccionFutbol>()
             {
                 entrenador1, masajista1, masajista2, futbolista1, futbolista2, futbolista3, futbolista4
@@ -39,15 +40,40 @@ namespace ConsoleApp1
                 entrenador1
             };
 
+            foreach (Entrenador entrenador in entrenadores)
+            {
+                entrenador.ManageTraining();
+                entrenador.Travel();
+                break;
+            };
+
             List<Futbolista> futbolistas = new List<Futbolista>()
             {
                 futbolista1, futbolista2, futbolista3, futbolista4
+            };
+
+            foreach (Futbolista futbolista in futbolistas)
+            {
+                futbolista.GeneralTraining();
+                futbolista.Travel();
+                break;
             };
 
             List<Masajista> masajistas = new List<Masajista>()
             {
                 masajista1, masajista2
             };
+
+            foreach (Masajista masajista in masajistas)
+            {
+                masajista.GiveMassage();
+                masajista.Travel();
+                break;
+            };
+
+            //He creado un garaje vacio
+            SelectedCountry country = new SelectedCountry("Rusia", participants, 10);
+
 
             // to show all of them
             //foreach (Entrenador entrenador in entrenadores)
@@ -64,16 +90,14 @@ namespace ConsoleApp1
             //{
             //    Console.WriteLine(futbolista.MostrarDatos());
             //}
-            masajista1.Travel();
-            masajista1.ReturnFromTravel();
+
             //code below does the same, but the one above is better.
             //masajista1.SetTravelling(true);
             //masajista1.SetTravelling(false);
 
             //it counts with the method GetCount();
-            Console.WriteLine("NUMBER OF PEOPLE " + SeleccionFutbol.GetCount());
+            //Console.WriteLine("NUMBER OF PEOPLE " + SeleccionFutbol.GetCount());
             Console.ReadLine();
-
         }
     }
 }

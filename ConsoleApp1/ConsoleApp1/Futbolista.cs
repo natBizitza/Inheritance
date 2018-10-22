@@ -10,6 +10,7 @@ namespace ConsoleApp1
     {
         private int dorsal;
         private string demarcacion;
+        private bool playing, training;
 
         //constructor
         public Futbolista(int id, string nombre, string apellidos, int edad, int dorsal, string demarcacion) : base(id, nombre,apellidos, edad)
@@ -40,14 +41,28 @@ namespace ConsoleApp1
         }
 
         //methods TODO: update methods in the same way like Travel();
-        public void JugarPartido()
+        public void PlayGame()
         {
-            
+            this.playing = true;
         }
 
-        public void Entrenar()
+        public void EndGame()
         {
+            this.playing = false;
+        }
 
+
+        public void GeneralTraining()
+        {
+            Console.WriteLine("The player is training");
+
+            this.training = true;
+        }
+
+        public void EndGeneralTraining()
+        {
+            Console.WriteLine("The player is not training");
+            this.training = false;
         }
 
         //public string MostrarDatos()

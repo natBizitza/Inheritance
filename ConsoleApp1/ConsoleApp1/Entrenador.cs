@@ -10,6 +10,7 @@ namespace ConsoleApp1
     {
         private string idFederacion;
         private static int count = 0;
+        private bool match, training;
 
         //constructor
         public Entrenador(int id, string nombre, string apellidos, int edad, string idFederacion) : base(id, nombre, apellidos, edad)
@@ -21,7 +22,6 @@ namespace ConsoleApp1
         public string GetIdFederacion()
         {
             return this.idFederacion;
-            count++;
         }
 
         public void SetIdFederacion(string idFederacion)
@@ -30,14 +30,15 @@ namespace ConsoleApp1
         }
 
         //methods
-        public void DirigirPartido()
+        public void ManageMatch()
         {
-
+            this.match = true;
         }
 
-        public void DirigirEntrenamiento()
+        public void ManageTraining()
         {
-
+            Console.WriteLine("The trainer is managing training");
+            this.training = true;
         }
 
         //public string MostrarDatos()
