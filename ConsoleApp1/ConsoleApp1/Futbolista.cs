@@ -39,7 +39,7 @@ namespace ConsoleApp1
             this.demarcacion = demarcacion;
         }
 
-        //methods
+        //methods TODO: update methods in the same way like Travel();
         public void JugarPartido()
         {
             

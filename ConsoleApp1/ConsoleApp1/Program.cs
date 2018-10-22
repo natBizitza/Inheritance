@@ -27,10 +27,12 @@ namespace ConsoleApp1
 
             foreach (SeleccionFutbol person in selecion)
             {
+                //to get the name of the person in the beginning
                 Console.WriteLine(person.GetType().Name.ToUpper());
                 Console.WriteLine(person.ToString());
                 Console.WriteLine("**************************");
             }
+            Console.WriteLine("Number of people in the team :" + selecion.Count());
 
             List<Entrenador> entrenadores = new List<Entrenador>()
             {
@@ -62,6 +64,14 @@ namespace ConsoleApp1
             //{
             //    Console.WriteLine(futbolista.MostrarDatos());
             //}
+            masajista1.Travel();
+            masajista1.ReturnFromTravel();
+            //code below does the same, but the one above is better.
+            //masajista1.SetTravelling(true);
+            //masajista1.SetTravelling(false);
+
+            //it counts with the method GetCount();
+            Console.WriteLine("NUMBER OF PEOPLE " + SeleccionFutbol.GetCount());
             Console.ReadLine();
 
         }

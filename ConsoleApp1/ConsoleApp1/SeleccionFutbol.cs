@@ -13,7 +13,7 @@ namespace ConsoleApp1
         private string apellidos;
         private int edad;
         private static int count = 0;
-        private string viajar = "";
+        private bool travelling, training;
         //to see all available methods for objects
         private Object a;
 
@@ -69,15 +69,31 @@ namespace ConsoleApp1
         }
 
         //methods
-        public void Concentrarse()
+        public void Training()
         {
-
+            this.training = true;
         }
 
-        public void SetViajar()
+        public void TrainingDone()
         {
-            
+            this.training = false;
         }
+
+        public void Travel()
+        {
+            this.travelling = true;
+        }
+
+        public void ReturnFromTravel()
+        {
+            this.travelling = false;
+        }
+
+        //It works the same like a code above
+        //public void SetTravelling(bool travelling)
+        //{
+        //    this.travelling = travelling;
+        //}
 
         //public string MostrarDatos()
         //{
@@ -105,7 +121,7 @@ namespace ConsoleApp1
         //    return result;     
         //}
 
-        //it works wwith 'virtual'
+        //it works with 'virtual'
         //public virtual string MostrarDatos()
         //{
         //    string result = "";
@@ -137,11 +153,10 @@ namespace ConsoleApp1
             return "ID: " + id + "\nName: " + nombre + "\nApellido: " + apellidos + "\nAge: " + edad;
         }
 
-        public void contador()
+        public static int GetCount()
         {
-            GetId();
-            int result = count++;
-            Console.WriteLine("NUMBER OF PEOPLE " + result);
+            return count;
+            
         }
     }
 }
