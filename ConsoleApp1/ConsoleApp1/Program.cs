@@ -23,7 +23,7 @@ namespace ConsoleApp1
             //the list with all the team
             List<SeleccionFutbol> selecion = new List<SeleccionFutbol>()
             {
-                entrenador1, masajista1, masajista2, futbolista1, futbolista2, futbolista3, futbolista4
+                entrenador1, masajista1, masajista2, futbolista1, futbolista2, futbolista3
             };
 
             foreach (SeleccionFutbol person in selecion)
@@ -71,8 +71,11 @@ namespace ConsoleApp1
                 break;
             };
 
-            //He creado un garaje vacio
-            SelectedCountry country = new SelectedCountry("Rusia", participants, 10);
+            SelectedCountry country = new SelectedCountry("Rusia", selecion, 10);
+
+            country.AddParticipant(futbolista4);
+
+
 
 
             // to show all of them

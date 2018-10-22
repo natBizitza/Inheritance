@@ -9,7 +9,7 @@ namespace ConsoleApp1
     class SelectedCountry
     {
         private string countryName;
-        private List<SeleccionFutbol>particapants;
+        private List<SeleccionFutbol>participants;
         private int actualNumberPlayers;
         private static int numeroEntrenador, numeroMasajista;
 
@@ -17,7 +17,7 @@ namespace ConsoleApp1
         public SelectedCountry(string countryName, List<SeleccionFutbol> participants, int actualNumberPlayers)
         {
             this.countryName = countryName;
-            particapants = new List<SeleccionFutbol>();
+            this.participants = participants;
             this.actualNumberPlayers = actualNumberPlayers;
         }
 
@@ -45,7 +45,7 @@ namespace ConsoleApp1
         //Es un getter para que te devuelva la lista de CocheSimple
         public List<SeleccionFutbol> GetParticipants()
         {
-            return particapants;
+            return participants;
         }
 
         //MostrarDatosSelección(): Displays the name of the country, the number of members and their data.
@@ -79,14 +79,14 @@ namespace ConsoleApp1
                     numeroMasajista++;
                 }
 
-                particapants.Add(participant);
+                participants.Add(participant);
             }
         }
 
         //boolean AltaSeleccion ( ) Allowed if there is room , to enlist a new member and
         public Boolean MaximumParticipant(SeleccionFutbol participant)
         {
-            if (particapants.Count < 10)
+            if (participants.Count < 6)
             {
                 if (participant.GetType().Name == "Masajista" && numeroMasajista < 4)
                 {
