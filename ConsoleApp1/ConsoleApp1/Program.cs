@@ -70,7 +70,10 @@ namespace ConsoleApp1
                 masajista.Travel();
                 break;
             };
+
+            //to clear the console before
             Console.Clear();
+
             SelectedCountry country = new SelectedCountry("Rusia", selecion, 10);
            
             //country.AddParticipant(futbolista1);

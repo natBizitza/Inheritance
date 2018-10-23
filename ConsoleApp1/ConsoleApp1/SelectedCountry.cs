@@ -120,42 +120,38 @@ namespace ConsoleApp1
         //the list of participants and updating counters. Returns true if it has been unable to complete operation, 
         //false otherwise.
 
-        public Boolean MinimumParticipant(SeleccionFutbol participant)
-        {
-            int id;
-            Console.WriteLine("Introduce ID.");
-            id = Convert.ToInt32(Console.ReadLine());
+        //public Boolean MinimumParticipant()
+        //{
+        //    int id;
+        //    Console.WriteLine("Introduce ID.");
+        //    id = Convert.ToInt32(Console.ReadLine());
 
-            foreach (SeleccionFutbol x in participants)
-            {
-                if (participants.Count() != 0)
-                {
-                    if (participant.GetId() ==id)
-                    {
-                        Console.WriteLine("\n***********Participant was successfully removed**********");
-                        return true;
-                    }
-                }
-            }
-            Console.WriteLine("There is no participant with that ID");
-            return false;
-        }
+        //    foreach (SeleccionFutbol x in participants)
+        //    {
+        //        if (participants.Count() != 0)
+        //        {
+        //            if (x.GetId() ==id)
+        //            {
+        //                Console.WriteLine("***********Participant was successfully removed**********");
+        //                return true;
+        //            }
+        //        }
+        //    }
+        //    Console.WriteLine("There is no participant with that ID");
+        //    return false;
+        //}
 
         //to remove participant
-        public void RemoveParticipant(SeleccionFutbol participant)
+        public bool RemoveParticipant(SeleccionFutbol participant)
         {
-            if (MinimumParticipant(participant))
+            if(participants.Remove(participant))
             {
-                if ((participant.GetId()).GetType().Name == "Entrenador")
-                {
-                    numeroEntrenador--;
-                }
-                else if ((participant.GetId()).GetType().Name == "Masajista")
-                {
-                    numeroMasajista--;
-                }
-
-                participants.Remove(participant);
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("ID not find player in selection");
+                return false;
             }
         }
     }
