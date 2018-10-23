@@ -80,8 +80,8 @@ namespace ConsoleApp1
             country.MostrarDatos(selecion);
             country.RemoveParticipant(futbolista2);
             country.MostrarDatos(selecion);
-            country.prepareMatch();
-            country.playGame();
+            country.PrepareMatch();
+            country.PlayGame();
             // to show all of them
             //foreach (Entrenador entrenador in entrenadores)
             //{
@@ -104,26 +104,46 @@ namespace ConsoleApp1
 
             //it counts with the method GetCount();
             //Console.WriteLine("NUMBER OF PEOPLE " + SeleccionFutbol.GetCount());
+            Console.Clear();
+
             const int ADD = 1, REMOVE = 2, SHOWALL = 3, TRAINING = 4, GAME = 5;
-            int number;
+            int option;
 
-            Console.WriteLine("Choose a number from the menu.");
-            Console.WriteLine("1-add person");
-            Console.WriteLine("2-remove person");
-            Console.WriteLine("3 -show all members of the team");
-            Console.WriteLine("4- train the team");
-            Console.WriteLine("5 -manage the game");
-
-            number = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine();
-
-            switch(number)
+            do
             {
-                case ADDPERSON:
+                Console.WriteLine("Choose a number from the menu.");
+                Console.WriteLine("1 - Add person");
+                Console.WriteLine("2 - Remove person");
+                Console.WriteLine("3 - Show all members of the team");
+                Console.WriteLine("4 - Train the team");
+                Console.WriteLine("5 - Manage the game");
+
+                option = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine();
+
+                switch (option)
+                {
+                    case ADD:
+                        country.AddParticipant(futbolista1);
+                        break;
+                    case REMOVE:
+                        country.RemoveParticipant(futbolista1);
+                        break;
+                    case SHOWALL:
+                        country.MostrarDatos(selecion);
+                        break;
+                    case TRAINING:
+                        country.PrepareMatch();
+                        break;
+                    case GAME:
+                        country.PlayGame();
+                        break;
 
 
-            }
+                }
+            } while (option == 1 || option == 2 || option == 3 || option == 4 || option == 5);
+
             Console.ReadLine();
         }
     }

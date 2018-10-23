@@ -156,7 +156,7 @@ namespace ConsoleApp1
         }
 
         //TODO: override or virtual
-        public void prepareMatch()
+        public void PrepareMatch()
         {
             Console.WriteLine("TRAINING.");
             foreach (SeleccionFutbol person in participants)
@@ -205,7 +205,7 @@ namespace ConsoleApp1
             //    }
             //}
         }
-        public void playGame()
+        public void PlayGame()
         {
             Console.WriteLine("GAME.");
             foreach (SeleccionFutbol person in participants)
