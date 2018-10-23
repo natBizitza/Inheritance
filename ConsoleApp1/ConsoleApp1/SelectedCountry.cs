@@ -13,7 +13,7 @@ namespace ConsoleApp1
         private int actualNumberPlayers;
         private static int numeroEntrenador, numeroMasajista;
 
-        //constructor
+        //constructon
         public SelectedCountry(string countryName, List<SeleccionFutbol> participants, int actualNumberPlayers)
         {
             this.countryName = countryName;
@@ -47,10 +47,10 @@ namespace ConsoleApp1
         {
             return participants;
         }
-
+    
         //MostrarDatosSelección(): Displays the name of the country, the number of members and their data.
 
-        public string MostrarDatos()
+        public string MostrarDatos(List<SeleccionFutbol> participants)
         {
             string result = "";
 
@@ -60,7 +60,16 @@ namespace ConsoleApp1
             }
             if (this.GetActualNumberPlayers() != 0)
             {
-                result += "YEARS OF EXPERIENCE " + this.GetActualNumberPlayers() + " ";
+                result += "NUMBER OF PLAYERS " + SeleccionFutbol.GetCount() + " ";
+            }
+            Console.WriteLine(result);
+
+            foreach (SeleccionFutbol person in participants)
+            {
+                //to get the name of the person in the beginning
+                Console.WriteLine(person.GetType().Name.ToUpper());
+                Console.WriteLine(person.ToString());
+                Console.WriteLine("**************************");
             }
             return result;
         }
@@ -86,7 +95,7 @@ namespace ConsoleApp1
         //boolean AltaSeleccion ( ) Allowed if there is room , to enlist a new member and
         public Boolean MaximumParticipant(SeleccionFutbol participant)
         {
-            if (participants.Count < 6)
+            if (participants.Count < 30)
             {
                 if (participant.GetType().Name == "Masajista" && numeroMasajista < 4)
                 {
@@ -105,6 +114,49 @@ namespace ConsoleApp1
                 }
             }
             return false;
+        }
+
+        //boolean BajaSeleccion( ) calls for the id of the member to terminate, if it exists is removed by moving 
+        //the list of participants and updating counters. Returns true if it has been unable to complete operation, 
+        //false otherwise.
+
+        public Boolean MinimumParticipant(SeleccionFutbol participant)
+        {
+            int id;
+            Console.WriteLine("Introduce ID.");
+            id = Convert.ToInt32(Console.ReadLine());
+
+            foreach (SeleccionFutbol x in participants)
+            {
+                if (participants.Count() != 0)
+                {
+                    if (participant.GetId() ==id)
+                    {
+                        Console.WriteLine("\n***********Participant was successfully removed**********");
+                        return true;
+                    }
+                }
+            }
+            Console.WriteLine("There is no participant with that ID");
+            return false;
+        }
+
+        //to remove participant
+        public void RemoveParticipant(SeleccionFutbol participant)
+        {
+            if (MinimumParticipant(participant))
+            {
+                if ((participant.GetId()).GetType().Name == "Entrenador")
+                {
+                    numeroEntrenador--;
+                }
+                else if ((participant.GetId()).GetType().Name == "Masajista")
+                {
+                    numeroMasajista--;
+                }
+
+                participants.Remove(participant);
+            }
         }
     }
 }

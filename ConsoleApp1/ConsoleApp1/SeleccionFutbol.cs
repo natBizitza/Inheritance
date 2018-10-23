@@ -161,6 +161,7 @@ namespace ConsoleApp1
         public static int GetCount()
         {
             return count;
+
             
         }
     }
