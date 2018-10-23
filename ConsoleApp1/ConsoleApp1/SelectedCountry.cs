@@ -154,5 +154,75 @@ namespace ConsoleApp1
                 return false;
             }
         }
+
+        //TODO: override or virtual
+        public void prepareMatch()
+        {
+            Console.WriteLine("TRAINING.");
+            foreach (SeleccionFutbol person in participants)
+            {
+                
+                if(person.GetType().Name == "Entrenador" || person.GetType().Name == "Masajista"|| person.GetType().Name == "Futbolista")
+                {
+                    person.Travel();
+                }
+                if (person.GetType().Name == "Entrenador")
+                {
+                    Console.WriteLine("You are trainer. Manage the training.");
+                }
+                else if (person.GetType().Name == "Masajista")
+                {
+                    Console.WriteLine("You are a masseur. Give a massage.");              
+                }
+                else if (person.GetType().Name == "Futbolista")
+                {
+                    Console.WriteLine("You are player. Go to train!");                 
+                }
+            }
+
+            //if (participant.GetType().Name == "Entrenador")
+            //{
+            //    foreach (SeleccionFutbol person in participants)
+            //    {
+            //        Console.WriteLine("Manage the match.");
+            //        break;
+            //    }
+            //}
+            //else if (participant.GetType().Name == "Masajista")
+            //{
+            //    foreach (SeleccionFutbol person in participants)
+            //    {
+            //        Console.WriteLine("Give a massage.");
+            //        break;
+            //    }
+            //}
+            //else if (participant.GetType().Name == "Futbolista")
+            //{
+            //    foreach (SeleccionFutbol person in participants)
+            //    {
+            //        Console.WriteLine("Go to train!");
+            //        break;
+            //    }
+            //}
+        }
+        public void playGame()
+        {
+            Console.WriteLine("GAME.");
+            foreach (SeleccionFutbol person in participants)
+            {
+                if (person.GetType().Name == "Entrenador")
+                {
+                    Console.WriteLine("You are trainer. Manage the game.");
+                }
+                else if (person.GetType().Name == "Masajista")
+                {
+                    Console.WriteLine("You are a masseur. Give a massage.");
+                }
+                else if (person.GetType().Name == "Futbolista")
+                {
+                    Console.WriteLine("You are player. Play!");
+                }
+            }
+        }   
     }
 }
