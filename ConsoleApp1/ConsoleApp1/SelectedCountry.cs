@@ -49,7 +49,7 @@ namespace ConsoleApp1
         }
     
         //MostrarDatosSelección(): Displays the name of the country, the number of members and their data.
-
+        //sin parameter below
         public string MostrarDatos(List<SeleccionFutbol> participants)
         {
             string result = "";
@@ -161,7 +161,7 @@ namespace ConsoleApp1
             Console.WriteLine("TRAINING.");
             foreach (SeleccionFutbol person in participants)
             {
-                
+                //change below
                 if(person.GetType().Name == "Entrenador" || person.GetType().Name == "Masajista"|| person.GetType().Name == "Futbolista")
                 {
                     person.Travel();

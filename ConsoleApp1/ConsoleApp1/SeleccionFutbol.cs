@@ -94,36 +94,36 @@ namespace ConsoleApp1
         }
 
         //It works the same like a code above
-        //public void SetTravelling(bool travelling)
-        //{
-        //    this.travelling = travelling;
-        //}
+        public void SetTravelling(bool travelling)
+        {
+            this.travelling = travelling;
+        }
 
-        //public string MostrarDatos()
-        //{
-        //    string result = "";
+        public string MostrarDatos()
+        {
+            string result = "";
 
-        //    if (this.GetId() > 0)
-        //    {
-        //       result += "ID " + this.GetId() + " ";
-        //       count++;
-            
-        //    }
-        //    if (this.GetNombre() !="")
-        //    {
-        //        result += "NOMBRE " + this.GetNombre() + " ";
-        //    }
-        //    if (this.GetApellidos() != "")
-        //    {
-        //        result += "APELLIDOS " + this.GetApellidos() + " ";
-        //    }
-        //    if (this.GetEdad() > 0)
-        //    {
-        //        result += "EDAD " + this.GetEdad() + " ";
-        //    }
-        //    //Console.WriteLine(count);
-        //    return result;     
-        //}
+            if (this.GetId() > 0)
+            {
+                result += "ID " + this.GetId() + " ";
+                count++;
+
+            }
+            if (this.GetNombre() != "")
+            {
+                result += "NOMBRE " + this.GetNombre() + " ";
+            }
+            if (this.GetApellidos() != "")
+            {
+                result += "APELLIDOS " + this.GetApellidos() + " ";
+            }
+            if (this.GetEdad() > 0)
+            {
+                result += "EDAD " + this.GetEdad() + " ";
+            }
+            //Console.WriteLine(count);
+            return result;
+        }
 
         //it works with 'virtual'
         //public virtual string MostrarDatos()
@@ -152,7 +152,7 @@ namespace ConsoleApp1
         //    return result;
         //}
 
-            //to show all the data using ovveride for ToString();
+        //to show all the data using ovveride for ToString();
         public override string ToString()
         {
             return "ID: " + id + "\nName: " + nombre + "\nApellido: " + apellidos + "\nAge: " + edad;

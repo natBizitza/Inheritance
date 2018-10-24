@@ -72,7 +72,7 @@ namespace ConsoleApp1
             };
 
             //to clear the console before
-            Console.Clear();
+            //Console.Clear();
 
             SelectedCountry country = new SelectedCountry("Rusia", selecion, 10);
            
@@ -104,7 +104,7 @@ namespace ConsoleApp1
 
             //it counts with the method GetCount();
             //Console.WriteLine("NUMBER OF PEOPLE " + SeleccionFutbol.GetCount());
-            Console.Clear();
+            //Console.Clear();
 
             const int ADD = 1, REMOVE = 2, SHOWALL = 3, TRAINING = 4, GAME = 5;
             int option;
@@ -125,9 +125,11 @@ namespace ConsoleApp1
                 switch (option)
                 {
                     case ADD:
-                        country.AddParticipant(futbolista1);
+                        // TODO: change below. Ask for a data
+                        country.AddParticipant(futbolista2);
                         break;
                     case REMOVE:
+                        // TODO: change below. Ask for a data
                         country.RemoveParticipant(futbolista1);
                         break;
                     case SHOWALL:
